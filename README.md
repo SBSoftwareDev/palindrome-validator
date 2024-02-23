@@ -10,12 +10,12 @@ Starting off, I use a Regular Expression to match only the alphanumeric characte
 
     Let's take an odd length string, say 9 characters long. 
     The slice method requires an integer, so a value of 4.5 won't help us find which index to use.
-    We use the **floor** method instead of **ceil** because strings and arrays in JavaScript are zero-based. 
+    We use the floor method instead of ceil because strings and arrays in JavaScript are zero-based. 
 
         Values  - [ A, B, C, D, E, F, G, H, I]
         Indices - [ 0, 1, 2, 3, 4, 5, 6, 7, 8]
         
-    We can see that '4' is the central value in this example, the integer *below* the middle. 
+    We can see that '4' is the central value in this example, the integer below the middle. 
 
 
 In odd length cases, the central character is essentially left alone. Everything surrounding it should be identical. Another benefit of the **slice** method is that does ***not*** include the ending character. As in the example above, relating the central index gives everything up to, but not including that character, which is necessary for the comparison.
