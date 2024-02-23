@@ -1,6 +1,6 @@
 # Palindrome Validator
 
-This program is designed to validate a palindrome, that is to see if a string reads the same forwards as backwards. Taking a normal sentence as a string variable, I'm able to work with any sort of punctuation or whitespace (by work with, I mean absolutely ignore). A common theme with a lot of these small code snippets is that they're neat to look at and mess around with, however most have little bearing outside of their novelty. Maybe I'm just getting my repository count up? Either way, win for me, win for the viewer (assuming you don't think this is a dull write up).
+This program is designed to validate a palindrome, that is to see if a string reads the same *forwards* as *backwards*. Taking a normal sentence as a string variable, I'm able to work with any sort of **punctuation** or **whitespace** (by work with, I mean absolutely *ignore*). A common theme with a lot of these small code snippets is that they're neat to look at and mess around with, however most have little bearing outside of their novelty. Maybe I'm just getting my repository count up? Either way, win for me, win for the viewer (assuming you don't think this is a dull write up).
 
 ## My Implementation
 
@@ -8,12 +8,14 @@ The nature of a palindrome allows us to split it in half and get a mirrored imag
 
 Starting off, I use a Regular Expression to match only the alphanumeric characters, as I want to ignore any punctuation and whitespace. I obtain the first half of the string with the **slice** method, getting all of the *matched* characters up to the middle of the string. The **Math.floor** method takes care of odd numbers, as explained below. 
 
-        Let's take an odd length string, say 9 characters long. The slice method requires an integer, so a value of 4.5 won't help us find which index to use. We use the **floor** method instead of **ceil** because strings and arrays in JavaScript are zero-based. 
+    Let's take an odd length string, say 9 characters long. 
+    The slice method requires an integer, so a value of 4.5 won't help us find which index to use.
+    We use the **floor** method instead of **ceil** because strings and arrays in JavaScript are zero-based. 
 
         Values  - [ A, B, C, D, E, F, G, H, I]
         Indices - [ 0, 1, 2, 3, 4, 5, 6, 7, 8]
         
-        We can see that '4' is the central value in this example, the integer *below* the middle. 
+    We can see that '4' is the central value in this example, the integer *below* the middle. 
 
 
 In odd length cases, the central character is essentially left alone. Everything surrounding it should be identical. Another benefit of the **slice** method is that does ***not*** include the ending character. As in the example above, relating the central index gives everything up to, but not including that character, which is necessary for the comparison.
